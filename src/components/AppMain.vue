@@ -64,9 +64,9 @@ export default {
 <template>
     <main>
         <div class="container">
-            <div class="row" v-for="card in cards">
-                <div class="col">
-                    <div class="card">
+            <div class="row" >
+                <div class="col" v-for="card in cards">
+                    <div class="card" >
                         <div class="card-body">
                             <img src="/public/img/1.webp" alt="">
                             <img class="alternative-img" src="/public/img/1b.webp" alt="">
@@ -77,7 +77,8 @@ export default {
                         <div class="card-name">
                             <p>{{ card.brand }}</p>
                             <h2>{{ card.nome }}</h2>
-                            <span class="price">{{ card.discountedPrice }}</span> <span class="original-price">{{ card.originalPrice }}</span>
+                            <span class="price">{{ card.discountedPrice }}</span> <span class="original-price">{{
+                card.originalPrice }}</span>
                         </div>
                     </div>
                 </div>
