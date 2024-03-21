@@ -5,7 +5,7 @@ export default {
     data() {
         return {
             legalSection: ['Informazioni legali', 'Informativa Privacy', 'Diritto di recesso'],
-            socialSection: ['<i class="fa-brands fa-x-twitter"></i>', '<i class="fa-brands fa-facebook"></i>', '<i class="fa-brands fa-instagram"></i>', ' <i class="fa-brands fa-pinterest"></i>', '<i class="fa-brands fa-youtube"></i>'],
+            socialSection: ['fa-brands fa-x-twitter', 'fa-brands fa-facebook', 'fa-brands fa-instagram', ' fa-brands fa-pinterest', 'fa-brands fa-youtube'],
         }
     }
 }
@@ -18,14 +18,14 @@ export default {
             <div>
                 <h4>Boolando s.r.l</h4>
                 <ul>
-                    <li v-for="section in legalSection"><a href="#" >{{ section }}</a></li>
+                    <li v-for="section in legalSection"><a href="#">{{ section }}</a></li>
 
                 </ul>
             </div>
             <div>
                 <h4>Trovaci anche su</h4>
                 <ul>
-                    <li v-for="section in socialSection"><a href="#">{{ section }}</a></li>
+                    <li v-for="section in socialSection"><a href="#"><i v-bind:class="section"></i></a></li>
 
                 </ul>
             </div>
@@ -35,7 +35,7 @@ export default {
     </footer>
 </template>
 
-<style>
+<style lang="scss">
 footer {
     width: 100%;
     background-color: black;
@@ -50,7 +50,9 @@ footer {
 
     & ul {
         list-style: none;
-        
+        display: flex;
+        gap: 1rem;
+
         & a {
             color: white;
             text-decoration: none;

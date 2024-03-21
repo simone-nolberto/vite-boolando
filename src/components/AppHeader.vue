@@ -5,7 +5,7 @@ export default {
     data() {
         return {
             genderSection: ['Donne', 'Uomini', 'Bambini'],
-            menuSection: ['<i class="fa-regular fa-user"></i>', '<i class="fa-regular fa-heart"></i>', '<i class="fa-solid fa-cart-shopping"></i>'],
+            menuSection: ['fa-regular fa-user', 'fa-regular fa-hear', 'fa-solid fa-cart-sg'],
         }
     }
 }
@@ -22,7 +22,7 @@ export default {
 
             <div class="menu">
                 <ul>
-                    <li v-for="section in menuSection"><a href="#">{{ section }}</a></li>
+                    <li v-for="section in menuSection"><a href="#"><i v-bind:class="section"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -32,7 +32,7 @@ export default {
 
 </template>
 
-<style>
+<style lang="scss">
 header {
     color: white;
     background-color: orange;
@@ -49,7 +49,7 @@ header {
         list-style: none;
         display: flex;
         gap: 1rem;
-        
+
         & a {
             color: white;
             text-decoration: none;

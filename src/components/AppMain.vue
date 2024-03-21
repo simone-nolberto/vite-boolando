@@ -89,7 +89,7 @@ export default {
     </main>
 </template>
 
-<style>
+<style lang="scss">
 main {
 
     & .container {
