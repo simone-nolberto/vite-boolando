@@ -18,7 +18,7 @@ export default {
             <div>
                 <h4>Boolando s.r.l</h4>
                 <ul>
-                    <li v-for="section in legalSection"><a href="#">{{ section }}</a></li>
+                    <li v-for="section in legalSection"><a href="#" >{{ section }}</a></li>
 
                 </ul>
             </div>

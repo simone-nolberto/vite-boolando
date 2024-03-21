@@ -64,12 +64,12 @@ export default {
 <template>
     <main>
         <div class="container">
-            <div class="row" >
+            <div class="row">
                 <div class="col" v-for="card in cards">
-                    <div class="card" >
+                    <div class="card">
                         <div class="card-body">
-                            <img src="card.firstImg" alt="">
-                            <img class="alternative-img" src="card.secondImg" alt="">
+                            <img v-bind:src="card.firstImg" alt="">
+                            <img class="alternative-img" v-bind:src="card.secondImg" alt="">
                             <div class="discount">-50%</div>
                             <div class="store-section">Sostenibilità</div>
                             <div class="saved">&hearts;</div>
@@ -78,7 +78,7 @@ export default {
                             <p>{{ card.brand }}</p>
                             <h2>{{ card.nome }}</h2>
                             <span class="price">{{ card.discountedPrice }}</span> <span class="original-price">{{
-                card.originalPrice }}</span>
+                    card.originalPrice }}</span>
                         </div>
                     </div>
                 </div>
