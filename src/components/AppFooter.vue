@@ -2,6 +2,12 @@
 
 export default {
     name: 'AppFooter',
+    data() {
+        return {
+            legalSection: ['Informazioni legali', 'Informativa Privacy', 'Diritto di recesso'],
+            socialSection: ['<i class="fa-brands fa-x-twitter"></i>', '<i class="fa-brands fa-facebook"></i>', '<i class="fa-brands fa-instagram"></i>', ' <i class="fa-brands fa-pinterest"></i>', '<i class="fa-brands fa-youtube"></i>'],
+        }
+    }
 }
 
 </script>
@@ -12,19 +18,15 @@ export default {
             <div>
                 <h4>Boolando s.r.l</h4>
                 <ul>
-                    <li>Informazioni legali</li>
-                    <li>Informativa privacy</li>
-                    <li>Diritto di recesso</li>
+                    <li v-for="section in legalSection"><a href="#">{{ section }}</a></li>
+
                 </ul>
             </div>
             <div>
                 <h4>Trovaci anche su</h4>
                 <ul>
-                    <li><i class="fa-brands fa-x-twitter"></i></li>
-                    <li><i class="fa-brands fa-facebook"></i></li>
-                    <li><i class="fa-brands fa-instagram"></i></li>
-                    <li><i class="fa-brands fa-pinterest"></i></li>
-                    <li><i class="fa-brands fa-youtube"></i></li>
+                    <li v-for="section in socialSection"><a href="#">{{ section }}</a></li>
+
                 </ul>
             </div>
 
@@ -44,6 +46,15 @@ footer {
         align-items: center;
         justify-content: space-between;
         margin: 0 250px;
+    }
+
+    & ul {
+        list-style: none;
+        
+        & a {
+            color: white;
+            text-decoration: none;
+        }
     }
 
 }
