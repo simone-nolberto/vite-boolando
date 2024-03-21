@@ -2,6 +2,61 @@
 
 export default {
     name: 'AppMain',
+    data() {
+        return {
+            cards: [
+                {
+                    firstImg: '/public/img/1.webp',
+                    secondImg: '/public/img/1b.webp',
+                    brand: "Levi's",
+                    nome: 'Relaxed fit tee unisex',
+                    discountedPrice: '14,99€',
+                    originalPrice: '29,99€',
+                },
+                {
+                    firstImg: '/public/img/2.webp',
+                    secondImg: '/public/img/2b.webp',
+                    brand: "Guess",
+                    nome: 'Roses tee',
+                    discountedPrice: '20,99€',
+                    originalPrice: '29,99€',
+                },
+                {
+                    firstImg: '/public/img/3.webp',
+                    secondImg: '/public/img/3b.webp',
+                    brand: "Come zucchero filato",
+                    nome: 'Voglia di colori pastello',
+                    discountedPrice: '129,99€',
+                    originalPrice: '184,99€',
+                },
+                {
+                    firstImg: '/public/img/4.webp',
+                    secondImg: '/public/img/4b.webp',
+                    brand: "Levi's",
+                    nome: 'Relaxed fit tee unisex',
+                    discountedPrice: '14,99€',
+                    originalPrice: '29,99€',
+                },
+                {
+                    firstImg: '/public/img/5.webp',
+                    secondImg: '/public/img/5b.webp',
+                    brand: "Maya Deluxe",
+                    nome: 'Strip Bodice',
+                    discountedPrice: '',
+                    originalPrice: '99,99€',
+                },
+                {
+                    firstImg: '/public/img/6.webp',
+                    secondImg: '/public/img/6b.webp',
+                    brand: "Esprit",
+                    nome: 'Maglione - Black',
+                    discountedPrice: '',
+                    originalPrice: '29,99€',
+                }
+            ]
+        }
+
+    }
 }
 
 </script>
@@ -9,94 +64,25 @@ export default {
 <template>
     <main>
         <div class="container">
-            <div class="row">
+            <div class="row" v-for="card in cards">
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <img src="/img/1.webp" alt="">
-                            <img class="alternative-img" src="/img/1b.webp" alt="">
+                            <img src="/public/img/1.webp" alt="">
+                            <img class="alternative-img" src="/public/img/1b.webp" alt="">
                             <div class="discount">-50%</div>
                             <div class="store-section">Sostenibilità</div>
                             <div class="saved">&hearts;</div>
                         </div>
                         <div class="card-name">
-                            <p>Levi's</p>
-                            <h2>Relaxed fit tee unisex</h2>
-                            <span class="price">14,99€</span> <span class="original-price">29,99€</span>
+                            <p>{{ card.brand }}</p>
+                            <h2>{{ card.nome }}</h2>
+                            <span class="price">{{ card.discountedPrice }}</span> <span class="original-price">{{ card.originalPrice }}</span>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="/img/2.webp" alt="">
-                        <img class="alternative-img" src="/img/2b.webp" alt="">
-                        <div class="discount">-30%</div>
-                        <div class="saved">&hearts;</div>
-                        <div class="card-name">
-                            <p>Guess</p>
-                            <h2>Roses tee</h2>
-                            <span class="price">20,99€</span> <span class="original-price">29,99€</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="/img/3.webp" alt="">
-                        <img class="alternative-img" src="/img/3b.webp" alt="">
-                        <div class="discount">-30%</div>
-                        <div class="saved">&hearts;</div>
-                        <div class="card-name">
-                            <p>Come zucchero filato</p>
-                            <h2>Voglia di colori pastello</h2>
-                            <span class="price">129,99€</span> <span class="original-price">184,99€</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="/img/4.webp" alt="">
-                        <img class="alternative-img" src="/img/4b.webp" alt="">
-                        <div class="discount">-50%</div>
-                        <div class="store-section">Sostenibilità</div>
-                        <div class="saved">&hearts;</div>
-                        <div class="card-name">
-                            <p>Levi's</p>
-                            <h2>Relaxed fit tee unisex</h2>
-                            <span class="price">14,99€</span> <span class="original-price">29,99€</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="/img/5.webp" alt="">
-                        <img class="alternative-img" src="/img/5b.webp" alt="">
-                        <div class="saved">&hearts;</div>
-                        <div class="card-name">
-                            <p>Maya Deluxe</p>
-                            <h2>Stripe bodice</h2>
-                            <span class="price">99,99€</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="/img/6.webp" alt="">
-                        <img class="alternative-img" src="/img/6b.webp" alt="">
-                        <div class="store-section">Sostenibilità</div>
-                        <div class="saved">&hearts;</div>
-                        <div class="card-name">
-                            <p>Esprit</p>
-                            <h2>Maglione - Black</h2>
-                            <span class="price">29,99€</span>
-                        </div>
-                    </div>
-                </div>
+
             </div>
-
-
-
-
-
 
         </div>
     </main>
