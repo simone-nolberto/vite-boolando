@@ -33,27 +33,5 @@ export default {
 </template>
 
 <style lang="scss">
-header {
-    color: white;
-    background-color: orange;
-    width: 100%;
 
-    & .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 250px;
-    }
-
-    & ul {
-        list-style: none;
-        display: flex;
-        gap: 1rem;
-
-        & a {
-            color: white;
-            text-decoration: none;
-        }
-    }
-}
 </style>
