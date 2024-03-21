@@ -2,8 +2,13 @@
 
 export default {
     name: 'AppHeader',
+    data() {
+        return {
+            genderSection: ['Donne', 'Uomini', 'Bambini'],
+            menuSection: ['<i class="fa-regular fa-user"></i>', '<i class="fa-regular fa-heart"></i>', '<i class="fa-solid fa-cart-shopping"></i>'],
+        }
+    }
 }
-
 </script>
 
 <template>
@@ -11,17 +16,13 @@ export default {
         <div class="container">
             <div class="gender">
                 <ul>
-                    <li>Donna</li>
-                    <li>Uomini</li>
-                    <li>Bambini</li>
+                    <li v-for="section in genderSection"><a href="#">{{ section }}</a></li>
                 </ul>
             </div>
 
             <div class="menu">
                 <ul>
-                    <li><i class="fa-regular fa-user"></i></li>
-                    <li><i class="fa-regular fa-heart"></i></li>
-                    <li><i class="fa-solid fa-cart-shopping"></i></li>
+                    <li v-for="section in menuSection"><a href="#">{{ section }}</a></li>
                 </ul>
             </div>
         </div>
@@ -42,6 +43,17 @@ header {
         justify-content: space-between;
         align-items: center;
         margin: 0 250px;
+    }
+
+    & ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        
+        & a {
+            color: white;
+            text-decoration: none;
+        }
     }
 }
 </style>
