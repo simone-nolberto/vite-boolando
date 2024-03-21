@@ -6,48 +6,48 @@ export default {
         return {
             cards: [
                 {
-                    firstImg: '/public/img/1.webp',
-                    secondImg: '/public/img/1b.webp',
+                    firstImg: '/img/1.webp',
+                    secondImg: '/img/1b.webp',
                     brand: "Levi's",
                     nome: 'Relaxed fit tee unisex',
                     discountedPrice: '14,99€',
                     originalPrice: '29,99€',
                 },
                 {
-                    firstImg: '/public/img/2.webp',
-                    secondImg: '/public/img/2b.webp',
+                    firstImg: '/img/2.webp',
+                    secondImg: '/img/2b.webp',
                     brand: "Guess",
                     nome: 'Roses tee',
                     discountedPrice: '20,99€',
                     originalPrice: '29,99€',
                 },
                 {
-                    firstImg: '/public/img/3.webp',
-                    secondImg: '/public/img/3b.webp',
+                    firstImg: '/img/3.webp',
+                    secondImg: '/img/3b.webp',
                     brand: "Come zucchero filato",
                     nome: 'Voglia di colori pastello',
                     discountedPrice: '129,99€',
                     originalPrice: '184,99€',
                 },
                 {
-                    firstImg: '/public/img/4.webp',
-                    secondImg: '/public/img/4b.webp',
+                    firstImg: '/img/4.webp',
+                    secondImg: '/img/4b.webp',
                     brand: "Levi's",
                     nome: 'Relaxed fit tee unisex',
                     discountedPrice: '14,99€',
                     originalPrice: '29,99€',
                 },
                 {
-                    firstImg: '/public/img/5.webp',
-                    secondImg: '/public/img/5b.webp',
+                    firstImg: '/img/5.webp',
+                    secondImg: '/img/5b.webp',
                     brand: "Maya Deluxe",
                     nome: 'Strip Bodice',
                     discountedPrice: '',
                     originalPrice: '99,99€',
                 },
                 {
-                    firstImg: '/public/img/6.webp',
-                    secondImg: '/public/img/6b.webp',
+                    firstImg: '/img/6.webp',
+                    secondImg: '/img/6b.webp',
                     brand: "Esprit",
                     nome: 'Maglione - Black',
                     discountedPrice: '',
@@ -68,8 +68,8 @@ export default {
                 <div class="col" v-for="card in cards">
                     <div class="card" >
                         <div class="card-body">
-                            <img src="/public/img/1.webp" alt="">
-                            <img class="alternative-img" src="/public/img/1b.webp" alt="">
+                            <img src="card.firstImg" alt="">
+                            <img class="alternative-img" src="card.secondImg" alt="">
                             <div class="discount">-50%</div>
                             <div class="store-section">Sostenibilità</div>
                             <div class="saved">&hearts;</div>
