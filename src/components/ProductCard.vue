@@ -8,7 +8,7 @@ export default {
         }
 
     },
-    props: ['image', 'altImage', 'title', 'brand', 'discountedPrice', 'originalPrice'],
+    props: ['image', 'altImage', 'title', 'brand', 'originalPrice'],
 }
 
 </script>
@@ -27,7 +27,7 @@ export default {
             <div class="card-name">
                 <p>{{brand}}</p>
                 <h2>{{title}}</h2>
-                <span class="price">{{discountedPrice}}</span> <span class="original-price">{{originalPrice}}</span>
+                <span class="original-price">{{originalPrice}}</span>
             </div>
         </div>
     </div>
