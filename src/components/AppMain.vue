@@ -125,10 +125,9 @@ export default {
         <div class="container">
             <div class="row">
 
-                <ProductCard :card="card in cards" :badge="badge in card.badges" :image="card.frontImage"
+                <ProductCard :card="card in cards" :image="card.frontImage"
                     :altImage="card.backImage" :title="card.name" :brand="card.brand"
-                    :discountedPrice="card.discountedPrice" :originalPrice="card.price" :discount="badge"
-                    :impact="card.badges[0].value" v-for="card in cards">
+                    :discountedPrice="card.discountedPrice" :originalPrice="card.price" v-for="card in cards">
                 </ProductCard>
 
             </div>
