@@ -1,5 +1,7 @@
 <script>
 
+import ProductCard from './ProductCard.vue';
+
 export default {
     name: 'AppMain',
     data() {
@@ -56,6 +58,9 @@ export default {
             ]
         }
 
+    },
+    components: {
+        ProductCard
     }
 }
 
@@ -65,23 +70,10 @@ export default {
     <main>
         <div class="container">
             <div class="row">
-                <div class="col" v-for="card in cards">
-                    <div class="card">
-                        <div class="card-body">
-                            <img v-bind:src="card.firstImg" alt="">
-                            <img class="alternative-img" v-bind:src="card.secondImg" alt="">
-                            <div class="discount">-50%</div>
-                            <div class="store-section">Sostenibilità</div>
-                            <div class="saved">&hearts;</div>
-                        </div>
-                        <div class="card-name">
-                            <p>{{ card.brand }}</p>
-                            <h2>{{ card.nome }}</h2>
-                            <span class="price">{{ card.discountedPrice }}</span> <span class="original-price">{{
-                    card.originalPrice }}</span>
-                        </div>
-                    </div>
-                </div>
+
+                <ProductCard :image="card.firstImg" :altImage="card.secondImg" :title="card.nome" :brand="card.brand"
+                    :discountedPrice="card.discountedPrice" :originalPrice="card.originalPrice" v-for="card in cards">
+                </ProductCard>
 
             </div>
 
@@ -89,6 +81,4 @@ export default {
     </main>
 </template>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
