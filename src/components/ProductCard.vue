@@ -33,8 +33,8 @@ export default {
             <div class="card-body">
                 <img :src="image" alt="">
                 <img class="alternative-img" :src="altImage" alt="">
-                <div class="discount">{{ discount }}</div>
-                <div class="tag">{{ tag }}</div>
+                <div v-if="discount != null" class="discount">{{ discount }}</div>
+                <div v-if="tag != null" class="tag">{{ tag }}</div>
 
                 <div @click="saveProduct()" class="saved" :class="{ red: saved }">&hearts;</div>
                 <div class="card-name">
