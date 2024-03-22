@@ -14,17 +14,10 @@ export default {
                     "brand": "Levi's",
                     "name": "Relaxed Fit",
                     "price": 29.99,
-                    "isInFavorites": true,
-                    "badges": [
-                        {
-                            "type": "tag",
-                            "value": "Sostenibilità"
-                        },
-                        {
-                            "type": "discount",
-                            "value": "-50%"
-                        }
-                    ]
+                    "isInFavorites": false,
+                    'discount': '-50%',
+                    'badge': 'Sostenibilità',
+
                 },
                 {
                     "id": 2,
@@ -33,13 +26,8 @@ export default {
                     "brand": "Guess",
                     "name": "Roses Tee",
                     "price": 20.99,
-                    "isInFavorites": true,
-                    "badges": [
-                        {
-                            "type": "discount",
-                            "value": "-30%"
-                        }
-                    ]
+                    "isInFavorites": false,
+                    'discount': '-30%',
                 },
                 {
                     "id": 3,
@@ -49,12 +37,7 @@ export default {
                     "name": "Voglia di colori pastello",
                     "price": 129.99,
                     "isInFavorites": false,
-                    "badges": [
-                        {
-                            "type": "discount",
-                            "value": "-30%"
-                        }
-                    ]
+                    'discount': '-30%',
                 },
                 {
                     "id": 4,
@@ -64,16 +47,8 @@ export default {
                     "name": "Tee Unisex",
                     "price": 14.99,
                     "isInFavorites": false,
-                    "badges": [
-                        {
-                            "type": "tag",
-                            "value": "Sostenibilità"
-                        },
-                        {
-                            "type": "discount",
-                            "value": "-50%"
-                        }
-                    ]
+                    'discount': '-50%',
+                    'badge': 'Sostenibilità',
                 },
                 {
                     "id": 5,
@@ -82,17 +57,9 @@ export default {
                     "brand": "Maya Deluxe",
                     "name": "Stripe Bodice",
                     "price": 99.99,
-                    "isInFavorites": true,
-                    "badges": [
-                        {
-                            "type": "tag",
-                            "value": "Sostenibilità"
-                        },
-                        {
-                            "type": "discount",
-                            "value": "-50%"
-                        }
-                    ]
+                    "isInFavorites": false,
+                    'discount': '-50%',
+                    'badge': 'Sostenibilità',
                 },
                 {
                     "id": 6,
@@ -101,13 +68,8 @@ export default {
                     "brand": "Esprit",
                     "name": "Maglione - Black",
                     "price": 29.99,
-                    "isInFavorites": true,
-                    "badges": [
-                        {
-                            "type": "tag",
-                            "value": "Sostenibilità"
-                        }
-                    ]
+                    "isInFavorites": false,
+                    'badge': 'Sostenibilità',
                 }
             ]
         }
@@ -115,7 +77,8 @@ export default {
     },
     components: {
         ProductCard
-    }
+    },
+
 }
 
 </script>
@@ -125,9 +88,10 @@ export default {
         <div class="container">
             <div class="row">
 
-                <ProductCard :card="card in cards" :image="card.frontImage"
+                <ProductCard :saved="card.isInFavorites" :card="card" :image="card.frontImage"
                     :altImage="card.backImage" :title="card.name" :brand="card.brand"
-                    :discountedPrice="card.discountedPrice" :originalPrice="card.price" v-for="card in cards">
+                    :discountedPrice="card.discountedPrice" :originalPrice="card.price" :discount="card.discount"
+                    :tag="card.badge" v-for="card in cards">
                 </ProductCard>
 
             </div>

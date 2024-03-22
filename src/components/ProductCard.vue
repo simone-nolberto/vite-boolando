@@ -8,7 +8,20 @@ export default {
         }
 
     },
-    props: ['card', 'badge', 'image', 'altImage', 'title', 'brand', 'originalPrice', 'discount', 'impact'],
+    props: ['card', 'image', 'altImage', 'title', 'brand', 'originalPrice', 'discount', 'tag', 'saved'],
+    methods: {
+        saveProduct() {
+
+            if (this.card.isInFavorites === false) {
+                this.card.isInFavorites = true;
+                // console.log(this.card.isInFavorites);
+            } else {
+                this.card.isInFavorites = false
+                // console.log(this.card.isInFavorites);
+            }
+        }
+    }
+
 }
 
 </script>
@@ -20,19 +33,14 @@ export default {
             <div class="card-body">
                 <img :src="image" alt="">
                 <img class="alternative-img" :src="altImage" alt="">
-                <div>
-                    <div v-for="badge in card.badges"> AO </div>
+                <div class="discount">{{ discount }}</div>
+                <div class="tag">{{ tag }}</div>
 
-                    <!-- :class="{ discount: badge.type === discount | tag: badge.type === tag } -->
-
-
-                </div>
-                
-                <div class=" saved">&hearts;</div>
+                <div @click="saveProduct()" class="saved" :class="{ red: saved }">&hearts;</div>
                 <div class="card-name">
                     <p>{{ brand }}</p>
                     <h2>{{ title }}</h2>
-                    <span class="original-price">{{ originalPrice }}</span>
+                    <span class="original-price red">{{ originalPrice }}</span>
                 </div>
             </div>
         </div>
