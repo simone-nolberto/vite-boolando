@@ -5,11 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "serve": "json-server --watch db.json",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@fortawesome/vue-fontawesome": "^3.0.6",
+    "axios": "^1.6.8",
     "vue": "^3.4.21"
   },
   "devDependencies": {
