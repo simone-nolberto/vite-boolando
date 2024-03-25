@@ -5,7 +5,7 @@ export default {
     data() {
         return {
             genderSection: ['Donne', 'Uomini', 'Bambini'],
-            menuSection: ['fa-regular fa-user', 'fa-regular fa-hear', 'fa-solid fa-cart-sg'],
+            menuSection: ['fa-regular fa-user', 'fa-regular fa-heart', 'fa-solid fa-cart-shopping'],
         }
     }
 }
