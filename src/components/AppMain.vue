@@ -1,7 +1,7 @@
 <script>
 
 import ProductCard from './ProductCard.vue';
-import { state } from '/state.js'
+import { state } from '../state'
 
 export default {
     name: 'AppMain',
