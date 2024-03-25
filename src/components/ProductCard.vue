@@ -40,7 +40,7 @@ export default {
                 <div class="card-name">
                     <p>{{ brand }}</p>
                     <h2>{{ title }}</h2>
-                    <span class="original-price red">{{ originalPrice }}</span>
+                    <span class="original-price red">{{ originalPrice }}€</span>
                 </div>
             </div>
         </div>

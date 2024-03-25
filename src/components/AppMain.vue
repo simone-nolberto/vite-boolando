@@ -15,7 +15,7 @@ export default {
     },
     mounted() {
         this.state.getCard(this.state.apiUrl)
-    }
+    }, 
 
 }
 
