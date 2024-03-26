@@ -1,11 +1,11 @@
 <script>
 
+
+
 export default {
     name: 'ProductCard',
+    emits: ['showProductModal'],
     data() {
-        return {
-
-        }
 
     },
     props: ['card', 'image', 'altImage', 'title', 'brand', 'originalPrice', 'discount', 'tag', 'saved'],
@@ -19,8 +19,14 @@ export default {
                 this.card.isInFavorites = false
                 // console.log(this.card.isInFavorites);
             }
-        }
-    }
+        },
+
+    },
+    methods: {
+    
+    },
+
+
 
 }
 
@@ -39,7 +45,7 @@ export default {
                 <div @click="saveProduct()" class="saved" :class="{ red: saved }">&hearts;</div>
                 <div class="card-name">
                     <p>{{ brand }}</p>
-                    <h2>{{ title }}</h2>
+                    <h2 @click="$emit('showProductModal')">{{ title }}</h2>
                     <span class="original-price red">{{ originalPrice }}€</span>
                 </div>
             </div>
