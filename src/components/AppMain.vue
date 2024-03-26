@@ -28,6 +28,8 @@ export default {
 
             if (this.visible === false) {
                 this.visible = true;
+            } else{
+                this.visible = false;
             }
             console.log(this.visible);
         }
@@ -49,7 +51,7 @@ export default {
 
                 <ProductCard @showModal="changeVisibleStatus" :card="card" v-for="card in this.state.cards">
                 </ProductCard>
-                <CardModal :card="this.state.cards[this.id]" :visible="this.visible" />
+                <CardModal :card="this.state.cards[this.id]" :show="this.visible" />
 
             </div>
 
