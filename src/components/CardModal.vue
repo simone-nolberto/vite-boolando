@@ -2,17 +2,22 @@
 
 export default {
     name: 'CardModal',
+    data(){
+        return{
+            visible: false,
+        }
+    }
 
 }
 </script>
 
 <template>
 
-    <div class="modalContainer">
+    <div v-show="visible !== false" class="modalContainer">
         <div class="data">
-            <p>AO</p>
-            <h3>Fighi sti pantaloni</h3>
-            <p>Quanto costano?</p>
+            <p>{{ this.card.brand }}</p>
+            <h3>{{ this.card.name }}</h3>
+            <p>{{ this.card.price }}</p>
         </div>
         <button><i class="fa-solid fa-circle-xmark"></i></button>
 

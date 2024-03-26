@@ -4,9 +4,11 @@
 
 export default {
     name: 'ProductCard',
-    emits: ['showProductModal'],
+    emits: ['showModal',],
     data() {
-
+        return {
+            visible: false,
+        }
     },
     props: ['card', 'image', 'altImage', 'title', 'brand', 'originalPrice', 'discount', 'tag', 'saved'],
     methods: {
@@ -20,11 +22,16 @@ export default {
                 // console.log(this.card.isInFavorites);
             }
         },
-
+        showProductModal() {
+            // console.log('AO', this.card.id);
+            this.visible = true,
+                this.$emit('showModal')
+        },
+        closeModal() {
+            this.visible = false;
+        }
     },
-    methods: {
     
-    },
 
 
 
@@ -45,12 +52,22 @@ export default {
                 <div @click="saveProduct()" class="saved" :class="{ red: saved }">&hearts;</div>
                 <div class="card-name">
                     <p>{{ brand }}</p>
-                    <h2 @click="$emit('showProductModal')">{{ title }}</h2>
+                    <h2 @click="showProductModal">{{ title }}</h2>
                     <span class="original-price red">{{ originalPrice }}€</span>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- <div v-show="visible !== false" class="modalContainer">
+        <div class="data">
+            <p>{{ this.card.brand }}</p>
+            <h3>{{ this.card.name }}</h3>
+            <p>{{ this.card.price }}</p>
+        </div>
+        <button @click="closeModal"><i class="fa-solid fa-circle-xmark"></i></button>
+
+    </div> -->
 
 </template>
 

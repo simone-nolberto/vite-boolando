@@ -2,24 +2,24 @@
 
 import ProductCard from './ProductCard.vue';
 import { state } from '../state';
-import CardModal from './CardModal.vue';
+import CardModal from '/src/components/CardModal.vue';
+
 
 export default {
     name: 'AppMain',
     data() {
         return {
             state,
-        
-
         }
     },
     components: {
         ProductCard,
-        CardModal
+        CardModal,
+
     },
     methods: {
-        showProductModal() {
-            console.log('AO');
+        changeVisibleStatus() {
+            console.log('PieroGorgi');
         }
     },
     mounted() {
@@ -40,6 +40,7 @@ export default {
                     :discountedPrice="card.discountedPrice" :originalPrice="card.price" :discount="card.discount"
                     :tag="card.badge" v-for="card in this.state.cards">
                 </ProductCard>
+                <CardModal @showModal="changeVisibleStatus()" />
 
             </div>
 

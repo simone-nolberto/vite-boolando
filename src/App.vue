@@ -2,19 +2,25 @@
 import AppHeader from '/src/components/AppHeader.vue';
 import AppMain from '/src/components/AppMain.vue';
 import AppFooter from '/src/components/AppFooter.vue';
+import ProductCard from './components/ProductCard.vue';
+
 
 
 export default {
   name: 'App',
   data() {
     return {
-      
+
     }
   },
   components: {
     AppHeader,
     AppMain,
     AppFooter,
+    
+  },
+  methods: {
+    
   }
 }
 
@@ -24,13 +30,11 @@ export default {
 
 
   <AppHeader></AppHeader>
-  <AppMain></AppMain>
+  <AppMain>
+  
+  </AppMain>
   <AppFooter></AppFooter>
 
 </template>
 
-<style>
-
-
-
-</style>
+<style></style>
