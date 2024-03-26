@@ -185,7 +185,13 @@ footer {
 .images {
     width: 400px;
     height: 700px;
-    border: 1px dashed;
+    // border: 1px dashed;
+
+    & img{
+        width: 400px;
+        height: 700px;
+        object-fit: contain;
+    }
     
 }
 

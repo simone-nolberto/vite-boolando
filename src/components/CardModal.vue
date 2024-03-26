@@ -30,7 +30,7 @@ export default {
 
         <div class="innerContainer">
             <div class="images">
-                <!-- <img :src="card.frontImage" alt=""> -->
+                <img :src="card.frontImage" alt="">
             </div>
             <div class="product-Data">
                 <p>{{ card.brand }}</p>
