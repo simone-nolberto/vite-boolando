@@ -4,13 +4,13 @@
 
 export default {
     name: 'ProductCard',
-    emits: ['showModal',],
+    emits: ['showModal', 'id'],
     data() {
         return {
-            visible: false,
+            id: '',
         }
     },
-    props: ['card', 'image', 'altImage', 'title', 'brand', 'originalPrice', 'discount', 'tag', 'saved'],
+    props: ['card'],
     methods: {
         saveProduct() {
 
@@ -23,17 +23,14 @@ export default {
             }
         },
         showProductModal() {
-            // console.log('AO', this.card.id);
-            this.visible = true,
-                this.$emit('showModal')
+
+            this.id = this.card.id;
+            console.log(this.id);
+            this.$emit('showModal', this.id)
+
         },
-        closeModal() {
-            this.visible = false;
-        }
+
     },
-    
-
-
 
 }
 
@@ -44,30 +41,21 @@ export default {
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <img :src="image" alt="">
-                <img class="alternative-img" :src="altImage" alt="">
-                <div v-if="discount != null" class="discount">{{ discount }}%</div>
-                <div v-if="tag != null" class="tag">{{ tag }}</div>
+                <img :src="card.frontImage" alt="">
+                <img class="alternative-img" :src="card.backImage" alt="">
+                <div v-if="card.discount != null" class="discount">{{ card.discount }}%</div>
+                <div v-if="card.badge != null" class="tag">{{ card.badge }}</div>
 
-                <div @click="saveProduct()" class="saved" :class="{ red: saved }">&hearts;</div>
+                <div @click="saveProduct()" class="saved" :class="{ red: card.isInFavorites }">&hearts;</div>
                 <div class="card-name">
-                    <p>{{ brand }}</p>
-                    <h2 @click="showProductModal">{{ title }}</h2>
-                    <span class="original-price red">{{ originalPrice }}€</span>
+                    <p>{{ card.brand }}</p>
+                    <h2 @click="showProductModal()">{{ card.name }}</h2>
+                    <span class="original-price red">{{ card.price }}€</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- <div v-show="visible !== false" class="modalContainer">
-        <div class="data">
-            <p>{{ this.card.brand }}</p>
-            <h3>{{ this.card.name }}</h3>
-            <p>{{ this.card.price }}</p>
-        </div>
-        <button @click="closeModal"><i class="fa-solid fa-circle-xmark"></i></button>
-
-    </div> -->
 
 </template>
 

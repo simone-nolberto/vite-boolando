@@ -2,9 +2,16 @@
 
 export default {
     name: 'CardModal',
-    data(){
-        return{
-            visible: false,
+    data() {
+        return {
+
+        }
+    },
+    props: ['card', 'visible'],
+    methods: {
+        closeModal() {
+
+            console.log('Ce la faremo!!');
         }
     }
 
@@ -15,11 +22,11 @@ export default {
 
     <div v-show="visible !== false" class="modalContainer">
         <div class="data">
-            <p>{{ this.card.brand }}</p>
-            <h3>{{ this.card.name }}</h3>
-            <p>{{ this.card.price }}</p>
+            <p>{{ card.brand }}</p>
+            <h3>{{ card.name }}</h3>
+            <p>{{ card.price }}</p>
         </div>
-        <button><i class="fa-solid fa-circle-xmark"></i></button>
+        <button @click="closeModal()"><i class="fa-solid fa-circle-xmark"></i></button>
 
     </div>
 

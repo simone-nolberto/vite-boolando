@@ -2,7 +2,7 @@
 
 import ProductCard from './ProductCard.vue';
 import { state } from '../state';
-import CardModal from '/src/components/CardModal.vue';
+import CardModal from './CardModal.vue';
 
 
 export default {
@@ -10,6 +10,8 @@ export default {
     data() {
         return {
             state,
+            visible: false,
+            id: '',
         }
     },
     components: {
@@ -18,12 +20,22 @@ export default {
 
     },
     methods: {
-        changeVisibleStatus() {
-            console.log('PieroGorgi');
+        changeVisibleStatus(query) {
+            this.id = query - 1;
+            // console.log(this.id);
+            // console.log('PieroGorgi');
+            console.log(this.state.cards[this.id]);
+
+            if (this.visible === false) {
+                this.visible = true;
+            }
+            console.log(this.visible);
         }
     },
     mounted() {
+
         this.state.getCard(this.state.apiUrl)
+
     },
 
 }
@@ -35,12 +47,9 @@ export default {
         <div class="container">
             <div class="row">
 
-                <ProductCard :saved="card.isInFavorites" :card="card" :image="card.frontImage"
-                    :altImage="card.backImage" :title="card.name" :brand="card.brand"
-                    :discountedPrice="card.discountedPrice" :originalPrice="card.price" :discount="card.discount"
-                    :tag="card.badge" v-for="card in this.state.cards">
+                <ProductCard @showModal="changeVisibleStatus" :card="card" v-for="card in this.state.cards">
                 </ProductCard>
-                <CardModal @showModal="changeVisibleStatus()" />
+                <CardModal :card="this.state.cards[this.id]" :visible="this.visible" />
 
             </div>
 

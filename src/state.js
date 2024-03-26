@@ -9,7 +9,7 @@ export const state = reactive({
     getCard(url) {
         axios.get(url)
             .then(response => {
-                this.cards = response.data
+                this.cards = response.data;
                 // console.log(this.cards);
             })
     }
